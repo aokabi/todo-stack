@@ -1,0 +1,15 @@
+@(title: String, headline: String)(body: Html)
+<html>
+  <head>
+    <title>@title</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <!-- CDNJS :: Sortable (https://cdnjs.com/) -->
+    <script src="//cdn.jsdelivr.net/npm/sortablejs@@1.8.4/Sortable.min.js"></script>
+    <!-- CDNJS :: Vue.Draggable (https://cdnjs.com/) -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+  </head>
+  <body>
+    <h1>@headline</h1>
+    @body
+  </body>
+</html>
