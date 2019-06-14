@@ -3,21 +3,30 @@
 
 <div id="app">
   {{ message }}
-  <draggable v-model="myArray" group="people" @@start="drag=true" @@end="drag=false">
-    <div v-for="element in myArray" :key="element.id"> {{ element.name }} </div>
-  </draggable>
+  <nav class="panel box">
+    <draggable v-model="myArray" group="people" @@start="drag=true" @@end="drag=false">
+    <todo-item v-for="item in myArray" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    </draggable>
+  </nav>
 </div>
 <script> 
-  var app = new Vue({
-    el: '#app',
-    data: { 
-      message: 'This is a todo manage application!',
-      myArray: [
-        { id:0, name :'work'},
-        { id:1, name :'cleaning'},
-        { id:2, name :'mail'},
-      ]
-    }
-  })
+  var TodoComponent = {
+    props: ['todo'],
+    template: '<a class="panel-block">{{ todo.name }}</a>'
+  }
+var app = new Vue({
+  el: '#app',
+  components: {
+    'todo-item': TodoComponent
+  },
+  data: { 
+    message: 'This is a todo manage application!',
+    myArray: [
+      { id:0, name :'work'},
+      { id:1, name :'cleaning'},
+      { id:2, name :'mail'},
+    ]
+  }
+})
 </script>
 }

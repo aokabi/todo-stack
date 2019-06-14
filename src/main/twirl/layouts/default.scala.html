@@ -1,12 +1,14 @@
 @(title: String, headline: String)(body: Html)
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@title</title>
     <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
     <!-- CDNJS :: Sortable (https://cdnjs.com/) -->
     <script src="//cdn.jsdelivr.net/npm/sortablejs@@1.8.4/Sortable.min.js"></script>
     <!-- CDNJS :: Vue.Draggable (https://cdnjs.com/) -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
   </head>
   <body>
     <h1>@headline</h1>
